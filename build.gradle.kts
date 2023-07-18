@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.ilkimo.sas"
-version = "0.0.1"
+version = "0.1.0"
 application {
     mainClass.set("com.ilkimo.sas.ApplicationKt")
 
@@ -18,6 +18,12 @@ application {
 
 repositories {
     mavenCentral()
+}
+
+tasks.jar {
+    manifest {
+        attributes("Main-Class" to application.mainClass.get())
+    }
 }
 
 dependencies {
